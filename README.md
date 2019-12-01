@@ -25,7 +25,7 @@ You need Python 3.x.
 Put all files in one directory eg. "/home/pi/clock". Start your Python-IDE ( I use Thonny) and 
 select the  file "grossuhr_gps.py", then select "Run". 
 
-For implementing an autostart of teh Raspi, edit the following file:
+For implementing an autostart of the Raspi, edit the following file:
 
 sudo nano /etc/rc.local
 
