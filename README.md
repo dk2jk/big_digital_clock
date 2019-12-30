@@ -8,7 +8,7 @@ Description:
 A 7-segment-display from a petrol station has been revived. This is an experiment with the language Python.
 The controller is a RaspberryPi Zero ; [pyboard](https://pyboard.org/wp-content/uploads/2019/01/PYBv1_1-1024x768.jpg)
 or ESP32 /esp8266-Boards with Micropython will work with some modifications.
-Time date comes from a GPS module.  The timestamp in UTC ist extracted from GPS-sentence. The communication with the GPS-receiver has readable ASCII-format, so software ist very simple.
+Time date comes from a GPS module.  The timestamp in UTC ist extracted from GPS-sentence. The communication with the GPS-receiver has readable ASCII-format, so ![software](doc/gps_decoder.py) is very simple.
 A 3.3V to 5V level converter is not essential, as the 3.3V CMOS outputs can also drive TTL.
 The display works with TPIC6B595 shift registers (similar to 74hc595), which has an SPI Bus (Serial Peripheral Interface);
 this can be controlled with 3 lines: data, clock and chipselect. The outputs of the 595 directly drive the LEDs.
