@@ -6,7 +6,10 @@ A big digital clock giving new life to an old 7-segment displays from a petrol s
 Description:
 
 A 7-segment-display from a petrol station has been revived. This is an experiment with the language Python.
-The controller is a RaspberryPi Zero ( PyBoard or ESP32/ ESP8266-Boards with Micropython will work too). Time date comes from a GPS module.
+The controller is a RaspberryPi Zero ( PyBoard or ESP32/ ESP8266-Boards with Micropython will work too;  
+!(https://pyboard.org/wp-content/uploads/2019/01/PYBv1_1-1024x768.jpg)
+).
+Time date comes from a GPS module.
 A 3.3V to 5V level converter is not essential, as the 3.3V CMOS outputs can also drive TTL.
 The display works with TPIC6B595 shift registers (similar to 74hc595), which has an SPI Bus (Serial Peripheral Interface);
 this can be controlled with 3 lines: data, clock and chipselect. The outputs of the 595 directly drive the LEDs.
