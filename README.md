@@ -1,3 +1,5 @@
+https://github.com/dk2jk/big_digital_clock/blob/master/doc/big-clock.JPG
+
 # big_digital_clock
 A big digital clock giving new life to an old 7-segment displays from a petrol station. 
 
