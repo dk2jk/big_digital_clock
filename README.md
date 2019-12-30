@@ -1,4 +1,4 @@
-https://github.com/dk2jk/big_digital_clock/blob/master/doc/big-clock.JPG
+![big-clock](https://user-images.githubusercontent.com/50828453/71590415-9c593680-2b28-11ea-9261-22b783d1ca86.JPG)
 
 # big_digital_clock
 A big digital clock giving new life to an old 7-segment displays from a petrol station. 
