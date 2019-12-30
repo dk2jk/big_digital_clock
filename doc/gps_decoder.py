@@ -18,21 +18,28 @@ if not found:
 else:
     gps_str= zeilen[i]
     print("gefunden:",gps_str)
+    #gefunden: $GPRMC,222615.000,A,5128.9775,N,00819.3163,E,4.10,,060619,,,A*7D
 
 data= gps_str.split(',')  # daten sind durch ',' getrennt
 print("Daten als Liste:")
 print(data)
+#['$GPRMC', '222615.000', 'A', '5128.9775', 'N', '00819.3163', 'E', '4.10', '', '060619', '', '', 'A*7D\n']
 
 if data[2]=='A': print (data[2] ,"   = Daten ok")
 
 zeit= data[1]
 # 222615.000
 hms = zeit[0:2]+':'+zeit[2:4]+':'+zeit[4:6]
+#'22:26:15'
 print ("Zeit =", hms, "Uhr UTC")
+#Zeit = 22:26:15 Uhr UTC
 
-speed=float(data[7])
+speed=float(data[7]) # string nach float
+#4.1
 
 k2kmh=1.852
 kmh= speed*k2kmh
-kmh_string = format(kmh, '.1f') 
+#7.5931999999999995
+kmh_string = format(kmh, '.1f') # eine nachkommastelle
 print ("speed=", speed, "Knoten", kmh_string, "km/h")
+#speed= 4.1 Knoten 7.6 km/h
