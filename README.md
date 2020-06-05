@@ -18,8 +18,8 @@ The brightness may be controlled via PWM via the gate signal (G) of the 595. Thi
 Bill of material:
   - RaspberyPi
   - GPS receiver Modul
-  - 4 7-segment-displays with SPI-Interface
-  - power supply 5V for Raspi, 12V for Display ( depends on the display )
+  - 4 Seven-segment-displays with SPI-Interface
+  - Power supply 5V for Raspi, 12V for Display ( depends on the display )
 
 
 Install and Run:
