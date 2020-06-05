@@ -12,8 +12,8 @@ Time date comes from a GPS module.  The timestamp in UTC ist extracted from GPS-
 A 3.3V to 5V level converter is not essential, as the 3.3V CMOS outputs can also drive TTL.
 The display works with TPIC6B595 shift registers (similar to 74hc595), which has an SPI Bus (Serial Peripheral Interface);
 this can be controlled with 3 lines: data, clock and chipselect. The outputs of the 595 directly drive the LEDs.
-The brightness may be controlled via PWM via the gate signal (G) of the 595. This is done here with a squarewace signal from an
-555-timer, because the PWM of the Raspi has too much jitter ( but real hardware -PWM will work correctly).
+The brightness may be controlled via PWM via the gate signal (G) of the 595. This is done here with a squarewave signal from an
+555-Timer, because the PWM of the Raspi has too much jitter ( but real hardware -PWM will work correctly).
 
 Bill of material:
   - RaspberyPi
