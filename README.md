@@ -12,9 +12,10 @@ Time date comes from a GPS module.  The timestamp in UTC ist extracted from GPS-
 A 3.3V to 5V level converter is not essential, as the 3.3V CMOS outputs can also drive TTL.
 The display works with TPIC6B595 shift registers (similar to 74hc595), which has an SPI Bus (Serial Peripheral Interface);
 this can be controlled with 3 lines: data, clock and chipselect. The outputs of the 595 directly drive the LEDs.
-#Brightness control
-The brightness may be controlled via PWM via the gate signal (G) of the 595. This is done here with a squarewave signal from an
-555-Timer, because the PWM of the Raspi has too much jitter ( but real hardware -PWM will work correctly).
+# Brightness control
+- The brightness may be controlled via PWM via the gate signal (G) of the 595. This is done here with a squarewave signal from an
+555-Timer, because the PWM of the Raspi has too much jitter.
+- We can use hardware-pwm of raspi. This is don via pigpio daeman. This implemented in version of 25.08.22. The Brightness is set from the command line as integer parameter , see below.  
 
 Bill of material:
   - RaspberyPi
@@ -35,7 +36,10 @@ For implementing an autostart of the Raspi, edit the following file:
 sudo nano /etc/rc.local
 
       ...
-      python3 /home/pi/clock/grossuhr_gps.py &
+      #start pigpio daeman
+      sudo pigpiod
+      #start clock with 15% brightness
+      python3 /home/pi/clock/grossuhr_gps.py 15 &
       exit 0
 
 
