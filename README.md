@@ -27,7 +27,7 @@ The main python script is "grossuhr_gps.py".
 You need Python 3.x.
 Put all files in one directory eg. "/home/pi/clock". Start your Python-IDE ( I use [Thonny](https://thonny.org/)) and 
 select the  file "grossuhr_gps.py", optionally set program argument and select "Run". 
-You can program the board online with Thonny via SSH selecting "Remote Python 3 (SSH) ".
+You can program the board online with Thonny via SSH selecting "Remote Python 3 (SSH) " as interpreter.
 
 #### Autostart
 Edit:  
