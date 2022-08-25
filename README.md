@@ -12,28 +12,29 @@ Time date comes from a GPS module.  The timestamp in UTC ist extracted from GPS-
 A 3.3V to 5V level converter is not essential, as the 3.3V CMOS outputs can also drive TTL.
 The display works with TPIC6B595 shift registers (similar to 74hc595), which has an SPI Bus (Serial Peripheral Interface);
 this can be controlled with 3 lines: data, clock and chipselect. The outputs of the 595 directly drive the LEDs.
-### Brightness control
+#### Brightness control
 - The brightness may be controlled via PWM via the gate signal (G) of the 595. This is done here with a squarewave signal from an
 555-Timer, because the PWM of the Raspi has too much jitter.
-- We can use hardware-pwm of raspi. This is don via pigpio daeman. This implemented in version of 25.08.22. The Brightness is set from the command line as integer parameter , see below.  
+- Hardware-pwm of raspi is a good solution . This is done via pigpio library [pigpio daemon](https://abyz.me.uk/rpi/pigpio/). Then the pwm works without jitter. The brightness is set from the command line as integer parameter in percent , see below.  
 
 Bill of material:
   - RaspberyPi
   - GPS receiver Modul
   - 4 Seven-segment-displays with SPI-Interface
   - Power supply 5V for Raspi, 12V for Display ( depends on the display )
-### Install and Run
+#### Install and Run
 The main python script is "grossuhr_gps.py".
 You need Python 3.x.
-Put all files in one directory eg. "/home/pi/clock". Start your Python-IDE ( I use Thonny) and 
-select the  file "grossuhr_gps.py", then select "Run". 
+Put all files in one directory eg. "/home/pi/clock". Start your Python-IDE ( I use [Thonny](https://thonny.org/)) and 
+select the  file "grossuhr_gps.py", optionally set program argument and select "Run". 
+You can program the board online with Thonny via SSH selecting "Remote Python 3 (SSH) ".
 
-For implementing an autostart of the Raspi, edit the following file:
-
+#### Autostart
+Edit:  
 sudo nano /etc/rc.local
 
       ...
-      #start pigpio daeman
+      #start pigpio daemon
       sudo pigpiod
       #start clock with 15% brightness
       python3 /home/pi/clock/grossuhr_gps.py 15 &
